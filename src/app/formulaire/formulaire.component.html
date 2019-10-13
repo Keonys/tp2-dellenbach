@@ -1,0 +1,126 @@
+<div class="container">
+    <div class="row" *ngIf="!checkForm">
+        <div class="col-md-8">
+            <form [formGroup]="dataForm" (ngSubmit)="save()">
+                <div class="form-group">
+                    <label>Nom</label><span class="red">*</span>
+                    <input type="text" ngModel formControlName="nom" id="nom" class="form-control" pattern="[a-zA-ZÀ-ÿ\-]{2,20}" required>
+                    <div *ngIf="dataForm.get('nom').hasError('pattern') && checkValid">
+                        <span class="red">Erreur de Format, un nom fait minimum 2 caractères et maximum 20.</span>
+                    </div>
+                    <div *ngIf="dataForm.get('nom').value == '' && checkValid">
+                        <span class="red">Il faut remplir le nom.</span>
+                    </div>
+                    <br />
+        
+                    <label>Prénom</label><span class="red">*</span>
+                    <input type="text" ngModel formControlName="prenom" id="prenom" class="form-control" pattern="[a-zA-ZÀ-ÿ\-]{2,20}" required><br />
+                    <div *ngIf="dataForm.get('prenom').hasError('pattern') && checkValid">
+                        <span class="red">Erreur de Format, un prénom fait minimum 2 caractères et maximum 20.</span>
+                    </div>
+                    <div *ngIf="dataForm.get('prenom').value == '' && checkValid">
+                        <span class="red">Il faut remplir le prénom.</span>
+                    </div>
+                    <br />
+
+                    <label>Adresse</label><span class="red">*</span>
+                    <input type="text" ngModel formControlName="adresse" id="adresse" class="form-control" pattern="[0-9]{1,4}[a-zA-ZÀ-ÿ\-\.\s]{2,200}" required><br />
+                    <div *ngIf="dataForm.get('adresse').hasError('pattern') && checkValid">
+                        <span class="red">Erreur de Format.</span>
+                    </div>
+                    <div *ngIf="dataForm.get('adresse').value == '' && checkValid">
+                        <span class="red">Il faut remplir l'adresse.</span>
+                    </div>
+                    <br />
+
+                    <label>Code Postal</label><span class="red">*</span>
+                    <input type="number" ngModel formControlName="cp" id="cp" class="form-control" required><br />
+                    <div *ngIf="dataForm.get('cp').hasError('pattern') && checkValid">
+                        <span class="red">Erreur de Format.</span>
+                    </div>
+                    <div *ngIf="dataForm.get('cp').value == '' && checkValid">
+                        <span class="red">Il faut remplir le code postal.</span>
+                    </div>
+                    <br />
+
+                    <label>Ville</label><span class="red">*</span>
+                    <input type="text" ngModel formControlName="ville" id="ville" class="form-control" pattern="[a-zA-ZÀ-ÿ\-]{2,30}" required><br />
+                    <div *ngIf="dataForm.get('ville').hasError('pattern') && checkValid">
+                        <span class="red">Erreur de Format.</span>
+                    </div>
+                    <div *ngIf="dataForm.get('ville').value == '' && checkValid">
+                        <span class="red">Il faut remplir la ville.</span>
+                    </div>
+                    <br />
+
+                    <label>Téléphone</label><span class="red">*</span>
+                    <input type="tel" ngModel formControlName="tel" id="tel" class="form-control" required><br />
+                    <div *ngIf="dataForm.get('tel').hasError('pattern') && checkValid">
+                        <span class="red">Erreur de Format, merci de rentrer un numéro de téléphone correct (0600000000).</span>
+                    </div>
+                    <div *ngIf="dataForm.get('tel').value == '' && checkValid">
+                        <span class="red">Il faut remplir le champ téléphone.</span>
+                    </div>
+                    <br />
+
+                    <label>Email</label><span class="red">*</span>
+                    <input type="email" ngModel formControlName="mail" id="mail" class="form-control" required><br />
+                    <div *ngIf="dataForm.get('mail').hasError('pattern') && checkValid">
+                        <span class="red">Erreur de Format, ex : test@test.fr.</span>
+                    </div>
+                    <div *ngIf="dataForm.get('mail').value == '' && checkValid">
+                        <span class="red">Il faut remplir l'email.</span>
+                    </div>
+                    <br />
+
+                    <label>Civilité</label><span class="red">*</span>
+                    <input type="text" ngModel formControlName="civilite" id="civilite" class="form-control" required><br />
+                    <div *ngIf="dataForm.get('civilite').hasError('pattern') && checkValid">
+                        <span class="red">Erreur de Format.</span>
+                    </div>
+                    <div *ngIf="dataForm.get('civilite').value == '' && checkValid">
+                        <span class="red">Il faut remplir la civilité.</span>
+                    </div>
+                    <br />
+
+                    <label>Login</label><span class="red">*</span>
+                    <input type="text" ngModel formControlName="login" id="login" class="form-control" pattern="[a-zA-ZÀ-ÿ0-9\-]{2,20}" required><br />
+                    <div *ngIf="dataForm.get('login').hasError('pattern') && checkValid">
+                        <span class="red">Erreur de Format, un login fait minimum 2 caractères et maximum 20.</span>
+                    </div>
+                    <div *ngIf="dataForm.get('login').value == '' && checkValid">
+                        <span class="red">Il faut remplir le login.</span>
+                    </div>
+                    <br />
+
+                    <label>Mot de Passe</label><span class="red">*</span>
+                    <input type="password" ngModel formControlName="password" id="password" class="form-control" required><br />
+                    <div *ngIf="dataForm.get('password').hasError('pattern') && checkValid">
+                        <span class="red">Erreur de Format.</span>
+                    </div>
+                    <div *ngIf="dataForm.get('password').value == '' && checkValid">
+                        <span class="red">Il faut remplir le mot de passe.</span>
+                    </div>
+                    <br />
+
+                    <label>Pays</label><span class="red">*</span>
+                    <input type="text" ngModel formControlName="pays" id="pays" class="form-control" pattern="[a-zA-ZÀ-ÿ0-9\-]{2,20}" required><br />
+                    <div *ngIf="dataForm.get('pays').hasError('pattern') && checkValid">
+                        <span class="red">Erreur de Format.</span>
+                    </div>
+                    <div *ngIf="dataForm.get('pays').value == '' && checkValid">
+                        <span class="red">Il faut remplir le pays.</span>
+                    </div>
+                    <br />
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="checkForm && checkValid">
+    <app-recap [client]="client"></app-recap>
+</div>
+  
