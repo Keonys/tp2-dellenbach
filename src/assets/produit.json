@@ -1,6 +1,8 @@
 [
-  {"nom":"Coca-Cola","prix":"3"},
-  {"nom":"Jambon","prix":"8"},
-  {"nom":"Paté en Croûte","prix":"15"},
-  {"nom":"Bretzel","prix":"4"}
+  {"id":"1", "nom":"Baguette en bois de hêtre et plume de Phoenix", "prix":"100"},
+  {"id":"2", "nom":"Vif d'Or", "prix":"1000"},
+  {"id":"3", "nom":"Croc de Dragon", "prix":"100000"},
+  {"id":"4", "nom":"Corne de Licorne", "prix":"9999999999"},
+  {"id":"5", "nom":"Bonbon de Bertie Crochue", "prix":"5"},
+  {"id":"6", "nom":"Grenouille", "prix":"20"}
 ]

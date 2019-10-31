@@ -1,0 +1,7 @@
+<button class="btn btn-danger" (click)="onDelete()">Supprimer</button>
+<p>
+    Nombre Article(s) : {{nbArticles}}
+</p>
+<p *ngFor="let a of panier | async">
+    {{ a.nom }} / {{ a.prix }} €
+</p>

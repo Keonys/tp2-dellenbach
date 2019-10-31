@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+      <input type="text" class="form-control mt-4" placeholder="Entrez pour filtrer" [(ngModel)]="searchTerm"/>
+      <br />
+      <br />
+      <div *ngFor="let produit of filteredProduits">
+        <br />
+          <ul>
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <li>{{produit.nom}}</li>
+                  <li>{{produit.prix}} €</li> <br />
+                  <button class="btn btn-primary" (click)="onClick(produit.id, produit.nom, produit.prix)">Ajouter le Produit</button>
+                  <button class="btn btn-info" (click)="detailArticle(produit)">Détails</button>
+                </div>
+              </div>
+          </ul>
+          <br />
+      </div>
+    </div>
+  </div>
