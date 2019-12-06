@@ -3,7 +3,7 @@ require 'vendor/autoload.php';
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 use \Firebase\JWT\JWT;
-const CLE = "cledeswann";
+const CLE = "jesuisunecle";
 $app = new \Slim\App;
 $jwt = new \Slim\Middleware\JwtAuthentication([
     "path" => "/api",
@@ -32,8 +32,8 @@ $app->put('/client/{id}', 'updateClient');
 $app->delete('/client/{id}', 'deleteClient');
 $app->get('/connexion', '');
 function login ($request, $response, $args) {
-    $login = "swann";
-    $pwd = "swann";
+    $login = "test";
+    $pwd = "test";
     
     $body = $request->getParsedBody(); // Parse le body
     $enteredLogin = $body['login'];
@@ -54,7 +54,7 @@ function login ($request, $response, $args) {
         $data = array('login' => $login, 'pwd' => $pwd, 'token' => $token_jwt);
         return $response->withJson($data);
     }
-    $data = array("erreur" => 'Erreur!', 'token' => "Erreur de login");
+    $data = array("erreur" => 'Erreur!', 'token' => "ERREUR");
     return $response->withJson($data);
 }
 $app->post('/login', login);
