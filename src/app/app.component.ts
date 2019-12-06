@@ -11,14 +11,15 @@ import { Produit } from './models/Produit';
 })
 export class AppComponent {
   title = 'TP2-WEB-DELLENBACH';
+  id : string;
   nom : string;
   prix : string;
 
   constructor (private store : Store) {}
 
   onClick () {
-    this.addArticle (this.nom, this.prix);
+    this.addArticle (this.id, this.nom, this.prix);
   }
 
-  addArticle(nom, prix) { this.store.dispatch(new AddArticle({ nom, prix })); }
+  addArticle(id, nom, prix) { this.store.dispatch(new AddArticle({ id, nom, prix })); }
 }

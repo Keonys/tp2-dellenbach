@@ -29,7 +29,7 @@ export class PanierState {
     }
 
 @Action(DelArticle)
-    del ({getState, patchState }: StateContext<PanierStateModel>, { payload }: DelArticle) {
+    del ({getState, patchState }: StateContext<PanierStateModel>, {  }: DelArticle) {
         const state = getState();
         
         patchState({
