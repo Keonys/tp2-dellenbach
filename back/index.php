@@ -57,13 +57,15 @@ function login ($request, $response, $args) {
     $data = array("erreur" => 'Erreur!', 'token' => "ERREUR");
     return $response->withJson($data);
 }
+
 $app->post('/login', login);
+
 function setHeader($response) {
     return $response->withHeader("Access-Control-Allow-Origin", "*")->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
 }
 function getProduits($resquest,$response,$args)  
 {
-    $url = 'data.json'; // path to your JSON file
+    $url = 'produit.json'; // path to your JSON file
     $data = file_get_contents($url);
     return $response->write($data);              
 }
