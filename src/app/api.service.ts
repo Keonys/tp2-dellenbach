@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 import { Observable } from 'rxjs';
@@ -21,4 +21,19 @@ export class ApiService {
     public getProduits () : Observable<Produit[]> {
         return this.http.get<Produit[]>(environment.backendProduit);
     }
+    getToken(login : string, mdp : string) {
+        let data = JSON.stringify({
+          login: login,
+          motDePasse: mdp
+        });
+        let httpOptions = {
+          headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+          })
+        };
+        this.http.post<Object>(environment.backendLogin, data, httpOptions)
+        .subscribe(dataReturned => {
+          console.log(dataReturned['token']);
+        });
+      }
 }

@@ -19,6 +19,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PanierComponent } from './panier/panier.component';
 import { PanierState } from './shared/states/panier-state';
 import { DetailComponent } from './catalogue/detail/detail.component';
+import { LoginComponent } from './login/login.component';
 
 
 const appRoutes: Routes = [
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
   { path: 'formulaire', component: FormulaireComponent },
   { path: 'panier', component: PanierComponent },
   { path: 'detail', component: DetailComponent },
+  { path: 'login', component: LoginComponent },
   { path: '',
     redirectTo: '/vue-produit',
     pathMatch: 'full'
@@ -43,7 +45,8 @@ const appRoutes: Routes = [
     ErrorDirective,
     VueProduitComponent,
     PanierComponent,
-    DetailComponent
+    DetailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
